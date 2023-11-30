@@ -6,7 +6,7 @@
 /*   By: eddos-sa <eddos-sa@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/30 16:52:55 by eddos-sa          #+#    #+#             */
-/*   Updated: 2023/11/30 16:52:56 by eddos-sa         ###   ########.fr       */
+/*   Updated: 2023/11/30 19:18:49 by eddos-sa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ void	swap(t_stack **head, char *flag)
 	ft_printf("%s\n", flag);
 }
 
-void	rotate(t_stack **head, char *flag)
+void	reverse_rotate(t_stack **head, char *flag)
 {
 	t_stack	*first;
 	t_stack	*last;
@@ -44,7 +44,7 @@ void	rotate(t_stack **head, char *flag)
 	ft_printf("%s\n", flag);
 }
 
-void	reverse_rotate(t_stack **head, char *flag)
+void	rotate(t_stack **head, char *flag)
 {
 	t_stack	*first;
 	t_stack	*last;
