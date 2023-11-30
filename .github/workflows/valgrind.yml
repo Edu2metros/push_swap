@@ -1,0 +1,25 @@
+name: Valgrind Memory Leak Check
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  valgrind-check:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout Repository
+      uses: actions/checkout@v2
+
+    - name: Set up build environment
+      run: |
+        sudo apt-get update
+        sudo apt-get install -y build-essential valgrind
+
+    - name: Build Project
+      run: make
+
+    - name: Run Valgrind
+      run: valgrind --leak-check=full ./push_swap 5 4 3 2 1
