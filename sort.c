@@ -6,52 +6,46 @@
 /*   By: eddos-sa <eddos-sa@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/30 16:49:55 by eddos-sa          #+#    #+#             */
-/*   Updated: 2023/11/30 18:22:58 by eddos-sa         ###   ########.fr       */
+/*   Updated: 2023/12/01 14:11:51 by eddos-sa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-// tá o que eu faço agora? 6 3 0 5 -2
-void	sort_three(t_stack **stack)
+void	sort_list(t_stack **stack_a, t_stack **stack_b)
+{
+	if (lstsize(*stack_a) < 4)
+	{
+		if (lstsize(*stack_a) == 2)
+			swap(stack_a, "sa");
+		else
+			sort_three(stack_a);
+	}
+	else
+	{
+		if (lstsize(*stack_a) == 4 || lstsize(*stack_a) == 5)
+			sort_five(stack_a, stack_b);
+		else
+			sort_more(stack_a, stack_b);
+	}
+}
+
+void	sort_three(t_stack **stack_a)
+{
+	ft_printf("função para três elementos em construção, volte depois\n");
+}
+
+void	sort_five(t_stack **stack_a, t_stack **stack_b)
 {
 	t_stack	*current;
 	t_stack	*last;
 
-	current = *stack;
-	last = lstlast(stack);
-	if(current->number > current->next->number)
-		swap(stack, "sa");
-	// if(last->number < current->number)
-	// 	reverse_rotate(stack, "rra");
+	current = *stack_a;
+	last = lstlast(stack_a);
+	ft_printf("lista com 4 ou 5 elemtos, em construção, volte depois\n");
 }
 
-void	sort_list(t_stack **stack_a, t_stack **stack_b)
+void	sort_more(t_stack **stack_a, t_stack **stack_b)
 {
-	if (lstsize(*stack_a) == 3)
-		sort_three(stack_a);
-}
-
-t_stack	*lstlast(t_stack **stack)
-{
-	t_stack	*result;
-
-	result = *stack;
-	while (result != NULL && result->next != NULL)
-		result = result->next;
-	return (result);
-}
-
-
-int	lstsize(t_stack *lst)
-{
-	int	len;
-
-	len = 0;
-	while (lst != NULL)
-	{
-		lst = lst->next;
-		len++;
-	}
-	return (len);
+	ft_printf("função para mais de 5 elementos em construção, volte depois\n");
 }

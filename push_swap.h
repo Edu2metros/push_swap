@@ -6,7 +6,7 @@
 /*   By: eddos-sa <eddos-sa@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/30 16:51:46 by eddos-sa          #+#    #+#             */
-/*   Updated: 2023/11/30 17:13:23 by eddos-sa         ###   ########.fr       */
+/*   Updated: 2023/12/01 13:18:20 by eddos-sa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,7 +48,7 @@ void				reverse_rotate(t_stack **head, char *flag);
 void				push_a(t_stack **stack_a, t_stack **stack_b, char *flag);
 
 // SORT FUNCTIONS
-void				sort_three(t_stack **stack);
+void				sort_five(t_stack **stack);
 void				sort_list(t_stack **stack_a, t_stack **stack_b);
 t_stack				*lstlast(t_stack **last);
 int					lstsize(t_stack *lst);
