@@ -6,11 +6,11 @@
 /*   By: eddos-sa <eddos-sa@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/30 16:53:06 by eddos-sa          #+#    #+#             */
-/*   Updated: 2023/12/01 13:37:01 by eddos-sa         ###   ########.fr       */
+/*   Updated: 2023/12/01 17:47:21 by eddos-sa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "../include/push_swap.h"
 
 int	ft_limits(const char *str)
 {

@@ -6,11 +6,11 @@
 /*   By: eddos-sa <eddos-sa@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/30 16:52:27 by eddos-sa          #+#    #+#             */
-/*   Updated: 2023/11/30 17:28:06 by eddos-sa         ###   ########.fr       */
+/*   Updated: 2023/12/01 17:47:24 by eddos-sa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "../include/push_swap.h"
 
 void	free_stack_b(t_stack **stack)
 {

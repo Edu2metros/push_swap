@@ -6,11 +6,11 @@
 /*   By: eddos-sa <eddos-sa@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/30 16:52:55 by eddos-sa          #+#    #+#             */
-/*   Updated: 2023/12/01 13:28:47 by eddos-sa         ###   ########.fr       */
+/*   Updated: 2023/12/01 18:00:28 by eddos-sa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "../include/push_swap.h"
 
 void	swap(t_stack **head, char *flag)
 {
@@ -21,6 +21,8 @@ void	swap(t_stack **head, char *flag)
 	second = (*head)->next;
 	first->next = second->next;
 	second->previous = first->previous;
+	if (second->next)
+		second->next->previous = first;
 	second->next = first;
 	first->previous = second;
 	*head = second;

@@ -6,11 +6,11 @@
 /*   By: eddos-sa <eddos-sa@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/01 14:11:07 by eddos-sa          #+#    #+#             */
-/*   Updated: 2023/12/01 14:15:18 by eddos-sa         ###   ########.fr       */
+/*   Updated: 2023/12/01 17:47:39 by eddos-sa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "../include/push_swap.h"
 
 int	is_ordened_list(t_stack *head)
 {
@@ -23,11 +23,11 @@ int	is_ordened_list(t_stack *head)
 	return (1);
 }
 
-t_stack	*lstlast(t_stack **stack)
+t_stack	*lstlast(t_stack *stack)
 {
 	t_stack	*result;
 
-	result = *stack;
+	result = stack;
 	while (result != NULL && result->next != NULL)
 		result = result->next;
 	return (result);

@@ -6,11 +6,11 @@
 /*   By: eddos-sa <eddos-sa@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/30 16:49:05 by eddos-sa          #+#    #+#             */
-/*   Updated: 2023/12/01 14:09:52 by eddos-sa         ###   ########.fr       */
+/*   Updated: 2023/12/01 17:52:25 by eddos-sa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "../include/push_swap.h"
 
 void	printlist(t_stack *head)
 {
@@ -61,6 +61,8 @@ int	main(int argc, char **argv)
 	int		validate;
 
 	stack_a = NULL;
+	stack_b = NULL;
+	validate = 0;
 	if (argc >= 3)
 	{
 		validate = check_args(argv);
@@ -70,12 +72,13 @@ int	main(int argc, char **argv)
 		printlist(stack_a);
 		sort_list(&stack_a, &stack_b);
 		printlist(stack_a);
-		free_stacks(&stack_a, &stack_b);
 	}
+	free_stacks(&stack_a, &stack_b);
 }
 
 /*
 Fazer um algoritimo de ordenação de três números.
+		// sort_list(&stack_a, &stack_b);
 Fazer o push da stack a pra stack b
 TErminar de fazer a ordenação de algorítimo, rrr,
 	se tiver alguma flag imprimir aquilo etc
