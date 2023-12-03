@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: eddos-sa <eddos-sa@student.42.fr>          +#+  +:+       +#+        */
+/*   By: eduardo <eduardo@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/30 16:51:46 by eddos-sa          #+#    #+#             */
-/*   Updated: 2023/12/01 16:45:23 by eddos-sa         ###   ########.fr       */
+/*   Updated: 2023/12/03 18:43:46 by eduardo          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,8 +41,19 @@ int					free_stacks(t_stack **stack_a, t_stack **stack_b);
 // MOVES FUNCTIONS
 
 void				swap(t_stack **head, char *flag);
+void				sa(t_stack **a);
+void				sb(t_stack **b);
+void				ss(t_stack **a, t_stack **b);
+
 void				rotate(t_stack **head, char *flag);
+void				ra(t_stack **a);
+void				rb(t_stack **b);
+void				rr(t_stack **a, t_stack **b);
+
 void				reverse_rotate(t_stack **head, char *flag);
+void				rra(t_stack **a);
+void				rrb(t_stack **b);
+void				rrr(t_stack **a, t_stack **b);
 
 // PUSH FUNCTIONS
 void				push_a(t_stack **stack_a, t_stack **stack_b, char *flag);

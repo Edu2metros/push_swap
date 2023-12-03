@@ -6,7 +6,7 @@ INCLUDES = -I ./include/
 SRC_DIR = src
 OBJ_DIR = objs
 
-PUSH_SWAP_SRC = main.c moves.c push.c free.c check_args.c sort.c utils.c
+PUSH_SWAP_SRC = main.c reverse_rotate_moves.c push.c free.c check_args.c sort.c utils.c rotate_moves.c swap_moves.c sort_three.c
 PUSH_SWAP_OBJ = $(addprefix $(OBJ_DIR)/, $(PUSH_SWAP_SRC:%.c=%.o))
 
 C_SRC = main.c moves_stack_a.c moves_stack_b.c

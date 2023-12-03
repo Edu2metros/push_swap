@@ -1,33 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   moves.c                                            :+:      :+:    :+:   */
+/*   reverse_rotate_moves.c                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: eddos-sa <eddos-sa@student.42.fr>          +#+  +:+       +#+        */
+/*   By: eduardo <eduardo@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/30 16:52:55 by eddos-sa          #+#    #+#             */
-/*   Updated: 2023/12/01 18:00:28 by eddos-sa         ###   ########.fr       */
+/*   Updated: 2023/12/03 19:43:13 by eduardo          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/push_swap.h"
-
-void	swap(t_stack **head, char *flag)
-{
-	t_stack	*first;
-	t_stack	*second;
-
-	first = *head;
-	second = (*head)->next;
-	first->next = second->next;
-	second->previous = first->previous;
-	if (second->next)
-		second->next->previous = first;
-	second->next = first;
-	first->previous = second;
-	*head = second;
-	ft_printf("%s\n", flag);
-}
 
 void	reverse_rotate(t_stack **head, char *flag)
 {
@@ -47,20 +30,18 @@ void	reverse_rotate(t_stack **head, char *flag)
 		ft_printf("%s\n", flag);
 }
 
-void	rotate(t_stack **head, char *flag)
+void	rra(t_stack **a)
 {
-	t_stack	*first;
-	t_stack	*last;
+	reverse_rotate(a, "rra");
+}
 
-	first = *head;
-	last = first;
-	while (last->next != NULL)
-		last = last->next;
-	*head = (*head)->next;
-	(*head)->previous = NULL;
-	last->next = first;
-	first->previous = last;
-	first->next = NULL;
-	if (flag)
-		ft_printf("%s\n", flag);
+void	rrb(t_stack **b)
+{
+	reverse_rotate(b, "rrb");
+}
+
+void	rrr(t_stack **a, t_stack **b)
+{
+	reverse_rotate(a, 0);
+	reverse_rotate(b, "rrr");
 }

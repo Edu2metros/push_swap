@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: eddos-sa <eddos-sa@student.42.fr>          +#+  +:+       +#+        */
+/*   By: eduardo <eduardo@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/30 16:49:05 by eddos-sa          #+#    #+#             */
-/*   Updated: 2023/12/01 17:52:25 by eddos-sa         ###   ########.fr       */
+/*   Updated: 2023/12/03 19:24:23 by eduardo          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,7 +67,10 @@ int	main(int argc, char **argv)
 	{
 		validate = check_args(argv);
 		if (!validate)
+		{
+			ft_printf("lista já ordernada\n");
 			return (EXIT_SUCCESS);
+		}
 		stack_a = init_stack_a(argv, stack_a);
 		printlist(stack_a);
 		sort_list(&stack_a, &stack_b);
