@@ -6,7 +6,7 @@
 /*   By: eddos-sa <eddos-sa@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/30 16:52:36 by eddos-sa          #+#    #+#             */
-/*   Updated: 2023/12/04 14:48:49 by eddos-sa         ###   ########.fr       */
+/*   Updated: 2023/12/04 18:00:54 by eddos-sa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,6 @@ void	push(t_stack **src, t_stack **dst, char *flag)
 
 	aux = *src;
 	*src = (*src)->next;
-	ft_printf("%d\n", aux->number);
 	if (*src)
 		(*src)->previous = NULL;
 	aux->next = *dst;
