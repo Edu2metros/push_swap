@@ -3,25 +3,34 @@
 /*                                                        :::      ::::::::   */
 /*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: eduardo <eduardo@student.42.fr>            +#+  +:+       +#+        */
+/*   By: eddos-sa <eddos-sa@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/30 16:49:05 by eddos-sa          #+#    #+#             */
-/*   Updated: 2023/12/03 19:24:23 by eduardo          ###   ########.fr       */
+/*   Updated: 2023/12/04 15:48:17 by eddos-sa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/push_swap.h"
 
-void	printlist(t_stack *head)
+void	printlist(t_stack *stack_a, t_stack *stack_b)
 {
 	t_stack	*current;
-
-	ft_printf("Lista completa: ");
-	current = head;
+	t_stack *current2;
+	ft_printf("stack a completa: ");
+	current = stack_a;
 	while (current != NULL)
 	{
 		ft_printf("%d ", current->number);
 		current = current->next;
+	}
+	ft_printf("\n");
+	
+	ft_printf("stack b completa: ");
+	current2 = stack_b;
+	while(current2 != NULL)
+	{
+		ft_printf("%d ", current2->number);
+		current2 = current2->next;
 	}
 	ft_printf("\n");
 }
@@ -72,9 +81,9 @@ int	main(int argc, char **argv)
 			return (EXIT_SUCCESS);
 		}
 		stack_a = init_stack_a(argv, stack_a);
-		printlist(stack_a);
+		printlist(stack_a, stack_b);
 		sort_list(&stack_a, &stack_b);
-		printlist(stack_a);
+		printlist(stack_a, stack_b);
 	}
 	free_stacks(&stack_a, &stack_b);
 }

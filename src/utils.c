@@ -6,7 +6,7 @@
 /*   By: eddos-sa <eddos-sa@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/01 14:11:07 by eddos-sa          #+#    #+#             */
-/*   Updated: 2023/12/01 17:47:39 by eddos-sa         ###   ########.fr       */
+/*   Updated: 2023/12/04 17:20:09 by eddos-sa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,4 +44,48 @@ int	lstsize(t_stack *lst)
 		len++;
 	}
 	return (len);
+}
+
+int	smallest_pos(t_stack *stack)
+{
+	int	pos;
+	int	i;
+	int	max;
+
+	pos = 0;
+	i = 0;
+	max = stack->number;
+	while (stack != NULL)
+	{
+		if (stack->number > max)
+		{
+			max = stack->number;
+			pos = i;
+		}
+		stack = stack->next;
+		i++;
+	}
+	return (pos);
+}
+
+int	biggest_pos(t_stack *stack)
+{
+	int	pos;
+	int	i;
+	int	max;
+
+	pos = 0;
+	i = 0;
+	max = stack->number;
+	while (stack != NULL)
+	{
+		if (stack->number > max)
+		{
+			max = stack->number;
+			pos = i;
+		}
+		stack = stack->next;
+		i++;
+	}
+	return (pos);
 }

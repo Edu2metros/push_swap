@@ -3,12 +3,13 @@
 /*                                                        :::      ::::::::   */
 /*   swap_moves.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: eduardo <eduardo@student.42.fr>            +#+  +:+       +#+        */
+/*   By: eddos-sa <eddos-sa@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/12/03 19:43:34 by eduardo           #+#    #+#             */
-/*   Updated: 2023/12/03 19:43:35 by eduardo          ###   ########.fr       */
+/*   Created: 2023/12/04 10:56:34 by eddos-sa          #+#    #+#             */
+/*   Updated: 2023/12/04 10:56:35 by eddos-sa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
 
 #include "../include/push_swap.h"
 

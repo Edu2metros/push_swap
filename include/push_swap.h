@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: eduardo <eduardo@student.42.fr>            +#+  +:+       +#+        */
+/*   By: eddos-sa <eddos-sa@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/30 16:51:46 by eddos-sa          #+#    #+#             */
-/*   Updated: 2023/12/03 18:43:46 by eduardo          ###   ########.fr       */
+/*   Updated: 2023/12/04 12:58:44 by eddos-sa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,7 +56,10 @@ void				rrb(t_stack **b);
 void				rrr(t_stack **a, t_stack **b);
 
 // PUSH FUNCTIONS
-void				push_a(t_stack **stack_a, t_stack **stack_b, char *flag);
+void				push(t_stack **stack_receive, t_stack **stack_to_send,
+						char *flag);
+void				pa(t_stack **stack_a, t_stack **stack_b);
+void				pb(t_stack **stack_a, t_stack **stack_b);
 
 // SORT FUNCTIONS
 void				sort_five(t_stack **stack_a, t_stack **stack_b);
@@ -65,5 +68,6 @@ t_stack				*lstlast(t_stack *last);
 int					lstsize(t_stack *lst);
 void				sort_three(t_stack **stack_a);
 void				sort_more(t_stack **stack_a, t_stack **stack_b);
+void				printlist(t_stack *stack_a, t_stack *stack_b);
 
 #endif
