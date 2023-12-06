@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: eddos-sa <eddos-sa@student.42.fr>          +#+  +:+       +#+        */
+/*   By: eduardo <eduardo@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/30 16:52:36 by eddos-sa          #+#    #+#             */
-/*   Updated: 2023/12/04 18:00:54 by eddos-sa         ###   ########.fr       */
+/*   Updated: 2023/12/06 13:04:42 by eduardo          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,6 +27,8 @@ void	push(t_stack **src, t_stack **dst, char *flag)
 {
 	t_stack	*aux;
 
+	if (!src || !dst)
+		return ;
 	aux = *src;
 	*src = (*src)->next;
 	if (*src)

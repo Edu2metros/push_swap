@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: eddos-sa <eddos-sa@student.42.fr>          +#+  +:+       +#+        */
+/*   By: eduardo <eduardo@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/30 16:51:46 by eddos-sa          #+#    #+#             */
-/*   Updated: 2023/12/04 18:37:25 by eddos-sa         ###   ########.fr       */
+/*   Updated: 2023/12/06 17:44:54 by eduardo          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,6 +70,7 @@ void				sort_three(t_stack **stack_a);
 void				sort_more(t_stack **stack_a, t_stack **stack_b);
 void				printlist(t_stack *stack_a, t_stack *stack_b);
 int					smallest_pos(t_stack *stack);
-int					second_smallest(t_stack *stack);
+int					second_smallest_pos(t_stack *stack);
+int					biggest_pos(t_stack *stack);
 
 #endif

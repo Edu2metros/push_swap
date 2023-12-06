@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   sort.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: eddos-sa <eddos-sa@student.42.fr>          +#+  +:+       +#+        */
+/*   By: eduardo <eduardo@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/30 16:49:55 by eddos-sa          #+#    #+#             */
-/*   Updated: 2023/12/04 19:23:11 by eddos-sa         ###   ########.fr       */
+/*   Updated: 2023/12/06 19:01:02 by eduardo          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,32 +29,55 @@ void	sort_list(t_stack **stack_a, t_stack **stack_b)
 			sort_more(stack_a, stack_b);
 	}
 }
-/*
-Função que acha a posição do menor numero
-CHega até o final
-*/
+// sortear 5 numero
+// outro algoritimo q tire 100;
 
 void	adjust_stacka(t_stack **stack_a, t_stack **stack_b)
 {
-	if(smallest_pos(*stack_a) > 2)
+	if (smallest_pos(*stack_a) == 0)
+		pb(stack_a, stack_b);
+	else if (smallest_pos(*stack_a) > 0 && smallest_pos(*stack_a) <= 2)
 	{
-		while(smallest_pos(*stack_a) != 1)
-			rra(stack_a);
-	}
-	else if(smallest_pos(*stack_a) < 3 && smallest_pos(*stack_a) == 1)
-	{
-		while (smallest_pos(*stack_a) != 1)
+		while (smallest_pos(*stack_a) != 0)
 			ra(stack_a);
+		pb(stack_a, stack_b);
 	}
-	pb(stack_a, stack_b);
+	else if (smallest_pos(*stack_a) >= 2 && smallest_pos(*stack_a) <= 4)
+	{
+		while (smallest_pos(*stack_a) != 0)
+			rra(stack_a);
+		pb(stack_a, stack_b);
+	}
 }
 
 void	sort_five(t_stack **stack_a, t_stack **stack_b)
 {
 	adjust_stacka(stack_a, stack_b);
+	if (lstsize(*stack_a) == 4)
+		adjust_stacka(stack_a, stack_b);
+	sort_three(stack_a);
+	pa(stack_a, stack_b);
+	if (lstsize(*stack_b) == 1)
+		pa(stack_a, stack_b);
+}
+
+void push_b(t_stack **a, t_stack **b)
+{
+	int 
+}
+
+void push_stack_b(t_stack **stack_a, t_stack **stack_b)
+{
+	int i;
+	i = find_minor_value(*stack_a);
+	pb(stack_a, stack_b);
+	pb(stack_a, stack_a);
+	while (lstsize(*stack_a) > 3)
+		push_b(stack_a, stack_b);
+	
 }
 
 void	sort_more(t_stack **stack_a, t_stack **stack_b)
 {
-	ft_printf("função para mais de 5 elementos em construção, volte depois\n");
+	push_stack_b(stack_a, stack_b);
 }

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   sort_three.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: eddos-sa <eddos-sa@student.42.fr>          +#+  +:+       +#+        */
+/*   By: eduardo <eduardo@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/04 10:56:27 by eddos-sa          #+#    #+#             */
-/*   Updated: 2023/12/04 15:41:41 by eddos-sa         ###   ########.fr       */
+/*   Updated: 2023/12/06 13:20:28 by eduardo          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,18 +20,19 @@ void	first_smaller_than_second(t_stack **stack_a, int first, int second,
 		rra(stack_a);
 		sa(stack_a);
 	}
-	else if (second < third)
-		ra(stack_a);
+	else if (first > third && second > third)
+		rra(stack_a);
 }
 
 void	first_bigger_than_second(t_stack **stack_a, int first, int second,
 		int third)
 {
-	if(first < third && second < third)
+	ft_printf("entrou\n");
+	if (first < third && second < third)
 		sa(stack_a);
-	else if(first > third && second < third)
+	else if (first > third && second < third)
 		ra(stack_a);
-	else if(first > third && second > third)
+	else if (first > third && second > third)
 	{
 		ra(stack_a);
 		sa(stack_a);
@@ -52,8 +53,3 @@ void	sort_three(t_stack **stack_a)
 	else
 		first_bigger_than_second(stack_a, first, second, third);
 }
-
-/*
-	10 > 1 < 9
-	10 > 2 > 1
-*/
