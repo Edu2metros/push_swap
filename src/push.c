@@ -6,7 +6,7 @@
 /*   By: eddos-sa <eddos-sa@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/30 16:52:36 by eddos-sa          #+#    #+#             */
-/*   Updated: 2023/12/07 12:37:29 by eddos-sa         ###   ########.fr       */
+/*   Updated: 2023/12/07 12:41:41 by eddos-sa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 t_stack	*init_stack_b(t_stack *stack_b, int value)
 {
 	t_stack	*current;
+
 	current = NULL;
 	stack_b = ft_calloc(1, sizeof(t_stack));
 	stack_b->number = value;
