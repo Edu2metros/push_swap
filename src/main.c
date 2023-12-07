@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: eduardo <eduardo@student.42.fr>            +#+  +:+       +#+        */
+/*   By: eddos-sa <eddos-sa@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/30 16:49:05 by eddos-sa          #+#    #+#             */
-/*   Updated: 2023/12/06 14:15:28 by eduardo          ###   ########.fr       */
+/*   Updated: 2023/12/07 12:35:11 by eddos-sa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,8 @@
 void	printlist(t_stack *stack_a, t_stack *stack_b)
 {
 	t_stack	*current;
-	t_stack *current2;
+	t_stack	*current2;
+
 	ft_printf("stack a completa: ");
 	current = stack_a;
 	while (current != NULL)
@@ -24,10 +25,9 @@ void	printlist(t_stack *stack_a, t_stack *stack_b)
 		current = current->next;
 	}
 	ft_printf("\n");
-	
 	ft_printf("stack b completa: ");
 	current2 = stack_b;
-	while(current2 != NULL)
+	while (current2 != NULL)
 	{
 		ft_printf("%d ", current2->number);
 		current2 = current2->next;

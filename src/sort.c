@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   sort.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: eduardo <eduardo@student.42.fr>            +#+  +:+       +#+        */
+/*   By: eddos-sa <eddos-sa@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/30 16:49:55 by eddos-sa          #+#    #+#             */
-/*   Updated: 2023/12/06 19:01:02 by eduardo          ###   ########.fr       */
+/*   Updated: 2023/12/07 12:33:31 by eddos-sa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,20 +61,15 @@ void	sort_five(t_stack **stack_a, t_stack **stack_b)
 		pa(stack_a, stack_b);
 }
 
-void push_b(t_stack **a, t_stack **b)
+void	push_stack_b(t_stack **stack_a, t_stack **stack_b)
 {
-	int 
-}
+	int	i;
 
-void push_stack_b(t_stack **stack_a, t_stack **stack_b)
-{
-	int i;
-	i = find_minor_value(*stack_a);
+	i = smallest_pos(*stack_a);
 	pb(stack_a, stack_b);
 	pb(stack_a, stack_a);
 	while (lstsize(*stack_a) > 3)
-		push_b(stack_a, stack_b);
-	
+		pb(stack_a, stack_b);
 }
 
 void	sort_more(t_stack **stack_a, t_stack **stack_b)

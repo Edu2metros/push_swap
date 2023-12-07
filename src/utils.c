@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   utils.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: eduardo <eduardo@student.42.fr>            +#+  +:+       +#+        */
+/*   By: eddos-sa <eddos-sa@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/01 14:11:07 by eddos-sa          #+#    #+#             */
-/*   Updated: 2023/12/06 12:31:41 by eduardo          ###   ########.fr       */
+/*   Updated: 2023/12/07 12:35:31 by eddos-sa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -82,36 +82,6 @@ int	biggest_pos(t_stack *stack)
 		if (stack->number > max)
 		{
 			max = stack->number;
-			pos = i;
-		}
-		stack = stack->next;
-		i++;
-	}
-	return (pos);
-}
-
-int	second_smallest_pos(t_stack *stack)
-{
-	int	pos;
-	int	i;
-	int	max;
-	int	second_max;
-
-	pos = 0;
-	i = 0;
-	max = INTMAX;
-	second_max = INTMAX;
-	while (stack != NULL)
-	{
-		if (stack->number < max)
-		{
-			second_max = max;
-			max = stack->number;
-			pos = i;
-		}
-		else if (stack->number < second_max && stack->number != max)
-		{
-			second_max = stack->number;
 			pos = i;
 		}
 		stack = stack->next;

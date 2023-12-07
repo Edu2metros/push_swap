@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: eduardo <eduardo@student.42.fr>            +#+  +:+       +#+        */
+/*   By: eddos-sa <eddos-sa@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/30 16:52:36 by eddos-sa          #+#    #+#             */
-/*   Updated: 2023/12/06 13:04:42 by eduardo          ###   ########.fr       */
+/*   Updated: 2023/12/07 12:35:59 by eddos-sa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,10 +40,12 @@ void	push(t_stack **src, t_stack **dst, char *flag)
 	(*dst)->previous = NULL;
 	ft_printf("%s\n", flag);
 }
+
 void	pa(t_stack **stack_a, t_stack **stack_b)
 {
 	push(stack_b, stack_a, "pa");
 }
+
 void	pb(t_stack **stack_a, t_stack **stack_b)
 {
 	push(stack_a, stack_b, "pb");
