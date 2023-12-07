@@ -6,13 +6,13 @@
 /*   By: eddos-sa <eddos-sa@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/30 16:49:55 by eddos-sa          #+#    #+#             */
-/*   Updated: 2023/12/07 12:33:31 by eddos-sa         ###   ########.fr       */
+/*   Updated: 2023/12/07 14:53:04 by eddos-sa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/push_swap.h"
 
-void	sort_list(t_stack **stack_a, t_stack **stack_b)
+void	sort_list(t_stack **stack_a, t_stack **stack_b, int argc)
 {
 	if (lstsize(*stack_a) < 4)
 	{
@@ -26,11 +26,9 @@ void	sort_list(t_stack **stack_a, t_stack **stack_b)
 		if (lstsize(*stack_a) == 4 || lstsize(*stack_a) == 5)
 			sort_five(stack_a, stack_b);
 		else
-			sort_more(stack_a, stack_b);
+			radix(stack_a, stack_b, argc);
 	}
 }
-// sortear 5 numero
-// outro algoritimo q tire 100;
 
 void	adjust_stacka(t_stack **stack_a, t_stack **stack_b)
 {
@@ -59,20 +57,4 @@ void	sort_five(t_stack **stack_a, t_stack **stack_b)
 	pa(stack_a, stack_b);
 	if (lstsize(*stack_b) == 1)
 		pa(stack_a, stack_b);
-}
-
-void	push_stack_b(t_stack **stack_a, t_stack **stack_b)
-{
-	int	i;
-
-	i = smallest_pos(*stack_a);
-	pb(stack_a, stack_b);
-	pb(stack_a, stack_a);
-	while (lstsize(*stack_a) > 3)
-		pb(stack_a, stack_b);
-}
-
-void	sort_more(t_stack **stack_a, t_stack **stack_b)
-{
-	push_stack_b(stack_a, stack_b);
 }

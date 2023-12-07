@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: eduardo <eduardo@student.42.fr>            +#+  +:+       +#+        */
+/*   By: eddos-sa <eddos-sa@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/30 16:51:46 by eddos-sa          #+#    #+#             */
-/*   Updated: 2023/12/06 17:44:54 by eduardo          ###   ########.fr       */
+/*   Updated: 2023/12/07 14:54:22 by eddos-sa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,7 +63,6 @@ void				pb(t_stack **stack_a, t_stack **stack_b);
 
 // SORT FUNCTIONS
 void				sort_five(t_stack **stack_a, t_stack **stack_b);
-void				sort_list(t_stack **stack_a, t_stack **stack_b);
 t_stack				*lstlast(t_stack *last);
 int					lstsize(t_stack *lst);
 void				sort_three(t_stack **stack_a);
@@ -72,5 +71,7 @@ void				printlist(t_stack *stack_a, t_stack *stack_b);
 int					smallest_pos(t_stack *stack);
 int					second_smallest_pos(t_stack *stack);
 int					biggest_pos(t_stack *stack);
+void				radix(t_stack **stack_a, t_stack **stack_b, int argc);
+void				sort_list(t_stack **stack_a, t_stack **stack_b, int argc);
 
 #endif

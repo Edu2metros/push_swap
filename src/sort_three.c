@@ -6,7 +6,7 @@
 /*   By: eddos-sa <eddos-sa@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/04 10:56:27 by eddos-sa          #+#    #+#             */
-/*   Updated: 2023/12/07 12:36:33 by eddos-sa         ###   ########.fr       */
+/*   Updated: 2023/12/07 14:50:00 by eddos-sa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,6 @@ void	first_smaller_than_second(t_stack **stack_a, int first, int second,
 void	first_bigger_than_second(t_stack **stack_a, int first, int second,
 		int third)
 {
-	ft_printf("entrou\n");
 	if (first < third && second < third)
 		sa(stack_a);
 	else if (first > third && second < third)
