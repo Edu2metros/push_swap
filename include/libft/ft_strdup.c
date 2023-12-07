@@ -6,7 +6,7 @@
 /*   By: eddos-sa <eddos-sa@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/26 13:15:58 by eddos-sa          #+#    #+#             */
-/*   Updated: 2023/08/09 18:50:06 by eddos-sa         ###   ########.fr       */
+/*   Updated: 2023/12/07 18:25:06 by eddos-sa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,9 +20,7 @@ char	*ft_strdup(const char *str)
 
 	i = 0;
 	while (str[i] != '\0')
-	{
 		i++;
-	}
 	strdup = (char *)malloc((i + 1) * sizeof(char));
 	if (strdup == NULL)
 		return (NULL);

@@ -6,7 +6,7 @@
 /*   By: eddos-sa <eddos-sa@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/30 16:51:46 by eddos-sa          #+#    #+#             */
-/*   Updated: 2023/12/07 14:54:22 by eddos-sa         ###   ########.fr       */
+/*   Updated: 2023/12/07 18:52:02 by eddos-sa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,11 @@
 typedef struct s_stack
 {
 	int				number;
-
+	int				index;
+	int				pos;
+	int				target_pos;
+	int				cost_a;
+	int				cost_b;
 	struct s_stack	*next;
 	struct s_stack	*previous;
 }					t_stack;

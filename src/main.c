@@ -6,7 +6,7 @@
 /*   By: eddos-sa <eddos-sa@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/30 16:49:05 by eddos-sa          #+#    #+#             */
-/*   Updated: 2023/12/07 14:52:24 by eddos-sa         ###   ########.fr       */
+/*   Updated: 2023/12/07 19:27:12 by eddos-sa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,6 +55,7 @@ int	main(int argc, char **argv)
 		if (!validate)
 			return (EXIT_SUCCESS);
 		stack_a = init_stack_a(argv, stack_a);
+		printlist(stack_a, stack_b);
 		sort_list(&stack_a, &stack_b, argc);
 	}
 	free_stacks(&stack_a, &stack_b);
