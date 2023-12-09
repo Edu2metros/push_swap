@@ -6,7 +6,7 @@
 /*   By: eddos-sa <eddos-sa@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/30 16:49:55 by eddos-sa          #+#    #+#             */
-/*   Updated: 2023/12/07 19:49:50 by eddos-sa         ###   ########.fr       */
+/*   Updated: 2023/12/09 15:35:07 by eddos-sa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,13 +50,60 @@ void	define_index(t_stack *stack_a, int size)
 	}
 }
 
+void	define_tag_pos(t_stack *b, t_stack *a)
+{
+	t_stack	*current_b;
+
+	while (a != NULL)
+	{
+		current_b = b;
+		while (current_b != NULL)
+		{
+			if (current_b->index + 1 == a->index || current_b->index
+				- 1 == a->index)
+			{
+				current_b->target_pos = a->pos;
+				break ;
+			}
+			current_b = current_b->next;
+		}
+		a = a->next;
+	}
+}
+
+void	define_pos(t_stack *stack_a, t_stack *stack_b)
+{
+	int		i;
+	t_stack	*current_a;
+	t_stack	*current_b;
+
+	current_a = stack_a;
+	i = 0;
+	while (current_a != NULL)
+	{
+		current_a->pos = i;
+		current_a = current_a->next;
+		i++;
+	}
+	current_b = stack_b;
+	i = 0;
+	while (current_b != NULL)
+	{
+		current_b->pos = i;
+		current_b = current_b->next;
+		i++;
+	}
+	define_tag_pos(stack_b, stack_a);
+}
+
 void	sort_big(t_stack **stack_a, t_stack **stack_b)
 {
 	init_variables(*stack_a);
 	define_index(*stack_a, lstsize(*stack_a) + 1);
-	while(lstsize(*stack_a) > 3)
+	while (lstsize(*stack_a) != 5)
 		pb(stack_a, stack_b);
-	sort_three(stack_a);
+	sort_five(stack_a, stack_b);
+	define_pos(*stack_a, *stack_b);
 	printlist(*stack_a, *stack_b);
 }
 

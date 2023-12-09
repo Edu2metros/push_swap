@@ -6,7 +6,7 @@
 /*   By: eddos-sa <eddos-sa@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/07 14:41:11 by eddos-sa          #+#    #+#             */
-/*   Updated: 2023/12/07 19:48:35 by eddos-sa         ###   ########.fr       */
+/*   Updated: 2023/12/09 14:10:13 by eddos-sa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,26 +14,28 @@
 
 void	printlist(t_stack *stack_a, t_stack *stack_b)
 {
-	t_stack	*current;
-	t_stack	*current2;
+	t_stack	*current_a;
+	t_stack	*current_b;
 
-	current = stack_a;
-	ft_printf("stack a: ");
-	while (current != NULL)
+	current_a = stack_a;
+	current_b = stack_b;
+	ft_printf("stack a:\n");
+	while (current_a != NULL)
 	{
-		ft_printf("%d ", current->number);
-		current = current->next;
+		ft_printf("number: %d | index: %d | pos: %d | target_pos: %d\n",
+			current_a->number, current_a->index, current_a->pos, current_a->target_pos);
+		current_a = current_a->next;
 	}
-	ft_printf("\n");
-	ft_printf("stack b ");
-	current2 = stack_b;
-	while (current2 != NULL)
+	ft_printf("\nstack b:\n");
+	while (current_b != NULL)
 	{
-		ft_printf("%d ", current2->number);
-		current2 = current2->next;
+		ft_printf("number: %d | index: %d | pos: %d | target_pos: %d\n",
+			current_b->number, current_b->index, current_b->pos, current_b->target_pos);
+		current_b = current_b->next;
 	}
 	ft_printf("\n");
 }
+
 
 int	calculate_bits(int argc)
 {
