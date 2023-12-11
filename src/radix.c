@@ -6,7 +6,7 @@
 /*   By: eddos-sa <eddos-sa@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/07 14:41:11 by eddos-sa          #+#    #+#             */
-/*   Updated: 2023/12/09 14:10:13 by eddos-sa         ###   ########.fr       */
+/*   Updated: 2023/12/11 11:01:36 by eddos-sa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,19 +23,20 @@ void	printlist(t_stack *stack_a, t_stack *stack_b)
 	while (current_a != NULL)
 	{
 		ft_printf("number: %d | index: %d | pos: %d | target_pos: %d\n",
-			current_a->number, current_a->index, current_a->pos, current_a->target_pos);
+			current_a->number, current_a->index, current_a->pos,
+			current_a->target_pos);
 		current_a = current_a->next;
 	}
 	ft_printf("\nstack b:\n");
 	while (current_b != NULL)
 	{
 		ft_printf("number: %d | index: %d | pos: %d | target_pos: %d\n",
-			current_b->number, current_b->index, current_b->pos, current_b->target_pos);
+			current_b->number, current_b->index, current_b->pos,
+			current_b->target_pos);
 		current_b = current_b->next;
 	}
 	ft_printf("\n");
 }
-
 
 int	calculate_bits(int argc)
 {
@@ -73,6 +74,7 @@ void	radix(t_stack **stack_a, t_stack **stack_b, int argc)
 	int	len_a;
 	int	index;
 
+	printlist(*stack_a, *stack_b);
 	bits = calculate_bits(argc);
 	len_a = lstsize(*stack_a);
 	i = 0;

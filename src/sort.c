@@ -6,7 +6,7 @@
 /*   By: eddos-sa <eddos-sa@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/30 16:49:55 by eddos-sa          #+#    #+#             */
-/*   Updated: 2023/12/09 15:35:07 by eddos-sa         ###   ########.fr       */
+/*   Updated: 2023/12/11 10:58:34 by eddos-sa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -104,7 +104,6 @@ void	sort_big(t_stack **stack_a, t_stack **stack_b)
 		pb(stack_a, stack_b);
 	sort_five(stack_a, stack_b);
 	define_pos(*stack_a, *stack_b);
-	printlist(*stack_a, *stack_b);
 }
 
 void	sort_list(t_stack **stack_a, t_stack **stack_b, int argc)
