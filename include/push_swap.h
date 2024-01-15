@@ -6,7 +6,7 @@
 /*   By: eddos-sa <eddos-sa@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/30 16:51:46 by eddos-sa          #+#    #+#             */
-/*   Updated: 2023/12/07 18:52:02 by eddos-sa         ###   ########.fr       */
+/*   Updated: 2023/12/11 16:15:57 by eddos-sa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 # define PUSH_SWAP_H
 
 # include "./libft/libft.h"
+# include <limits.h>
 
 # define INTMIN -2147483648
 # define INTMAX 2147483647
@@ -22,10 +23,6 @@ typedef struct s_stack
 {
 	int				number;
 	int				index;
-	int				pos;
-	int				target_pos;
-	int				cost_a;
-	int				cost_b;
 	struct s_stack	*next;
 	struct s_stack	*previous;
 }					t_stack;
@@ -77,5 +74,4 @@ int					second_smallest_pos(t_stack *stack);
 int					biggest_pos(t_stack *stack);
 void				radix(t_stack **stack_a, t_stack **stack_b, int argc);
 void				sort_list(t_stack **stack_a, t_stack **stack_b, int argc);
-
 #endif

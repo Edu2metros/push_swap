@@ -1,6 +1,6 @@
 PUSH_SWAP_NAME = push_swap
 CC = cc
-FLAGS = -g3
+FLAGS = -Wall -Wextra -Werror -g3 -O3
 INCLUDES = -I ./include/
 
 SRC_DIR = src

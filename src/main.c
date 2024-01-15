@@ -6,7 +6,7 @@
 /*   By: eddos-sa <eddos-sa@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/30 16:49:05 by eddos-sa          #+#    #+#             */
-/*   Updated: 2023/12/07 19:27:12 by eddos-sa         ###   ########.fr       */
+/*   Updated: 2023/12/13 12:13:30 by eddos-sa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,6 +34,7 @@ t_stack	*init_stack_a(char **argv, t_stack *value)
 		new->next = NULL;
 		current->next = new;
 		new->previous = current;
+		new->index = 0;
 		current = new;
 		i++;
 	}
@@ -49,15 +50,15 @@ int	main(int argc, char **argv)
 	stack_a = NULL;
 	stack_b = NULL;
 	validate = 0;
-	if (argc >= 3)
+	if (argc > 1)
 	{
-		validate = check_args(argv);
-		if (!validate)
+		if (!check_args(argv))
+			return (EXIT_FAILURE);
+		if (!is_ordened(argv))
 			return (EXIT_SUCCESS);
 		stack_a = init_stack_a(argv, stack_a);
-		printlist(stack_a, stack_b);
 		sort_list(&stack_a, &stack_b, argc);
+		free_stacks(&stack_a, &stack_b);
 	}
-	free_stacks(&stack_a, &stack_b);
 	return (EXIT_SUCCESS);
 }

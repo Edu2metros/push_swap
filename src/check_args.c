@@ -6,7 +6,7 @@
 /*   By: eddos-sa <eddos-sa@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/30 16:53:06 by eddos-sa          #+#    #+#             */
-/*   Updated: 2023/12/07 14:39:26 by eddos-sa         ###   ########.fr       */
+/*   Updated: 2023/12/13 12:13:37 by eddos-sa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,9 +16,17 @@ int	ft_limits(const char *str)
 {
 	long int	num;
 
+	if (str == NULL || *str == '\0' || !ft_isalldigit(str))
+	{
+		ft_putstr_fd("Error\n", 2);
+		return (0);
+	}
 	num = ft_atol(str);
-	if (num < INTMIN || num > INTMAX || !ft_isalldigit(str))
-		exit(ft_printf("Error\n"));
+	if (num < INT_MIN || num > INT_MAX)
+	{
+		ft_putstr_fd("Error\n", 2);
+		return (0);
+	}
 	return (1);
 }
 
@@ -50,15 +58,19 @@ int	check_args(char **argv)
 	i = 1;
 	while (argv[i] != NULL)
 	{
-		ft_limits(argv[i]);
+		if (!ft_limits(argv[i]))
+			return (0);
 		j = i + 1;
 		while (argv[j])
 		{
-			if (ft_atoi(argv[i]) == ft_atoi(argv[j]))
-				exit(ft_printf("Error\n"));
+			if (ft_atol(argv[i]) == ft_atol(argv[j]))
+			{
+				ft_putstr_fd("Error\n", 2);
+				return (0);
+			}
 			j++;
 		}
 		i++;
 	}
-	return (is_ordened(argv));
+	return (1);
 }
